@@ -25,12 +25,12 @@ app.get('/', (req, res) => {
 
 // GET: ヘルスチェック兼バージョン確認用
 app.get('/version', (req, res) => {
-  res.send(`${BOT_VERSION}¥n`);
+  res.send(`${BOT_VERSION}`);
 });
 
 //POST: /webhook
 app.post('/webhook', function (req, res) {
-  res.send('HTTP POST request sent to the webhook URL¥n');
+  res.send('HTTP POST request sent to the webhook URL');
 
   // ユーザーがボットにメッセージを送った場合、返信メッセージを送る
   if (req.body.events[0].type === 'message') {
@@ -80,5 +80,5 @@ app.post('/webhook', function (req, res) {
 
 // リッスン
 app.listen(PORT, () => {
-  console.log(`Example app listening at http://localhost:${PORT}¥n`);
+  console.log(`Example app listening at http://localhost:${PORT}`);
 });
