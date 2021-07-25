@@ -15,14 +15,14 @@ app.use(
   })
 );
 
-// GET: ルート
+// GET: ヘルスチェック用
 app.get('/', (req, res) => {
   res.sendStatus(200);
 });
 
 //POST: /webhook
 app.post('/webhook', function (req, res) {
-  res.send('HTTP POST request sent to the webhook URL');
+  res.send('HTTP POST request sent to the webhook URL¥n');
 
   // ユーザーがボットにメッセージを送った場合、返信メッセージを送る
   if (req.body.events[0].type === 'message') {
@@ -33,10 +33,6 @@ app.post('/webhook', function (req, res) {
         {
           type: 'text',
           text: 'Hello, user',
-        },
-        {
-          type: 'text',
-          text: 'May I help you?',
         },
       ],
     });
@@ -76,5 +72,5 @@ app.post('/webhook', function (req, res) {
 
 // リッスン
 app.listen(PORT, () => {
-  console.log(`Example app listening at http://localhost:${PORT}`);
+  console.log(`Example app listening at http://localhost:${PORT}¥n`);
 });
