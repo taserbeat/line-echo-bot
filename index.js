@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 });
 
 //POST: /webhook
-app.post('webhook', function (req, res) {
+app.post('/webhook', function (req, res) {
   res.send('HTTP POST request sent to the webhook URL');
 
   // ユーザーがボットにメッセージを送った場合、返信メッセージを送る
