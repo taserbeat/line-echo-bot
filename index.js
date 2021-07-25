@@ -15,9 +15,17 @@ app.use(
   })
 );
 
+// アプリケーションの定数
+const BOT_VERSION = 'ver0.1';
+
 // GET: ヘルスチェック用
 app.get('/', (req, res) => {
   res.sendStatus(200);
+});
+
+// GET: ヘルスチェック兼バージョン確認用
+app.get('/version', (req, res) => {
+  res.send(`${BOT_VERSION}¥n`);
 });
 
 //POST: /webhook
