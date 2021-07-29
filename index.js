@@ -34,13 +34,16 @@ app.post('/webhook', function (req, res) {
 
   // ユーザーがボットにメッセージを送った場合、返信メッセージを送る
   if (req.body.events[0].type === 'message') {
+    // ユーザーIDを取得
+    const userId = events[0].source.userId;
+
     // 文字列化したメッセージデータ
     const dataString = JSON.stringify({
       replyToken: req.body.events[0].replyToken,
       messages: [
         {
           type: 'text',
-          text: 'Hello, user',
+          text: `Your UserId: ${userId}`,
         },
       ],
     });
